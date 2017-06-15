@@ -1,0 +1,9 @@
+#include "palette.h"
+
+const uint16_t palette[5] = {
+	0x0000,
+	0x7fff,
+	0x001f,
+	0x03e0,
+	0x7c00
+};

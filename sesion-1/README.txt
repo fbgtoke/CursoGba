@@ -3,6 +3,8 @@ Sesión 1
 
 Esta sesión sirve a modo de introducción al curso. Su objetivo es familiarizar al alumno con las herramientas de desarrollo que se usarán a lo largo de las sesiones.
 
+Se tratan además los modos de visualización del tipo mapa de bits.
+
 Una vez configurado el entorno de desarrollo, se invita a compilar y ejecutar el ejemplo-1.
 
 ejemplo-1$ make
