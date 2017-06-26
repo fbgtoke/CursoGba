@@ -10,7 +10,7 @@ URL="https://github.com/mgba-emu/mgba/archive/0.5.2.tar.gz"
 
 echo "############# mGBA ############"
 if [ ! -d "$INSTALL_DIR" ]; then
-	cd /tmp
+	cd /var/tmp
 	if [ ! -f "$FILE" ]; then
 		echo "Downloading..."
 		wget -O $FILE $URL
@@ -33,8 +33,8 @@ if [ ! -d "$INSTALL_DIR" ]; then
 	cmake -DBUILD_SDL:BOOL=OFF ..
 	make -j4
 
-	mkdir -p "$MAIN_DIR/$INSTALL_DIR"
-	cp -r qt/mgba-qt "$MAIN_DIR/$INSTALL_DIR"
+	#mkdir -p "$MAIN_DIR/$INSTALL_DIR"
+	#cp -r qt/mgba-qt "$MAIN_DIR/$INSTALL_DIR"
 else
 	echo "Already installed"
 fi
@@ -47,7 +47,7 @@ URL="https://sourceforge.net/projects/devkitpro/files/devkitARM/devkitARM_r45/de
 
 echo "########## devkitArm ##########"
 if [ ! -d "$INSTALL_DIR" ]; then
-	cd /tmp
+	cd /var/tmp
 	if [ ! -f "$FILE" ]; then
 		echo "Downloading..."
 		wget -O $FILE $URL
@@ -66,8 +66,8 @@ if [ ! -d "$INSTALL_DIR" ]; then
 	fi
 
 	cd "$BUILD_DIR"
-	mkdir -p "$MAIN_DIR/$INSTALL_DIR"
-	cp -r ./* "$MAIN_DIR/$INSTALL_DIR"
+	#mkdir -p "$MAIN_DIR/$INSTALL_DIR"
+	#cp -r ./* "$MAIN_DIR/$INSTALL_DIR"
 else
 	echo "Already installed"
 fi
