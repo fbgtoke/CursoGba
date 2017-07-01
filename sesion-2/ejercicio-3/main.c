@@ -21,11 +21,8 @@ int main() {
 
     BG Mode 0          => 0x0000
     Screen Display GB0 => 0x0100
-    Screen Display GB1 => 0x0200
-    Screen Display GB2 => 0x0400
-    Screen Display GB3 => 0x0800
   */
-  *DISPCNT = 0x0F00;
+  *DISPCNT = 0x0100;
 
   while (1) {
 
