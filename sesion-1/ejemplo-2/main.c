@@ -31,7 +31,7 @@ int main() {
     14    Window 1 Display Flag      (0=Off, 1=On)
     15    OBJ Window Display Flag    (0=Off, 1=On)
   */
-  uint16_t* DISPCNT = (uint16_t*)0x04000000;
+  volatile uint16_t* DISPCNT = (uint16_t*)0x04000000;
 
   /**
     BG Mode 3          => 0000 0000 0000 0011 => 0x0003
@@ -52,7 +52,7 @@ int main() {
     10-14 Blue Intensity  (0-31)
     15    Not used in GBA Mode (in NDS Mode: Alpha=0=Transparent, Alpha=1=Normal)
   */
-  uint16_t* VRAM = (uint16_t*)0x06000000;
+  volatile uint16_t* VRAM = (uint16_t*)0x06000000;
 
   /**
   VRAM[xx + yy * SCREEN_WIDTH] = COLOR;
