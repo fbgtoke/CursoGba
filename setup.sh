@@ -106,6 +106,8 @@ fi
 echo -e "\e[1m\e[32m###############################\e[0m"
 echo ""
 
+cd "$MAIN_DIR"
+
 if [ ! -f ".lock" ]; then
 	echo "Installation done. Please configure your environment."
 	echo -e "\e[1m\e[31mThis is your first test and it will be evaluated...\e[0m"
