@@ -8,7 +8,7 @@ PATH := $(DEVKITARM)/bin:$(PATH)
 PROJ    := main
 EXT     := gba
 
-CFILES  := main.c mem.c dma.c obj.c quote1d.c
+CFILES  := main.c mem.c dma.c obj.c input.c quote2d.c
 
 SOBJS   := $(SFILES:.s=.o)
 COBJS   := $(CFILES:.c=.o)
@@ -33,7 +33,7 @@ LDFLAGS := $(SPECS) $(MODEL)
 build : gfx $(PROJ).$(EXT)
 
 gfx:
-	grit quote1d.png -gu16 -gB4 -ftc
+	grit quote2d.png -gu16 -gB4 -ftc
 
 $(PROJ).$(EXT) : $(PROJ).elf
 	@$(OBJCOPY) -v -O binary $< $@

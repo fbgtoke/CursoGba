@@ -2,18 +2,18 @@
 #include "mem.h"
 #include "dma.h"
 #include "obj.h"
-#include "quote1d.h"
+#include "quote2d.h"
 
 #define SCREEN_WIDTH  240
 #define SCREEN_HEIGHT 160
 
 /**
   VGA - Curso GBA
-  Ejemplo 1
+  Ejemplo 2
 
   Muestra un Sprite de 16x16 pixeles en el centro de la pantalla
   Utiliza el modo 4bpp
-  Utiliza la distribución 1D
+  Utiliza la distribución 2D
 */
 
 int main() {
@@ -21,10 +21,10 @@ int main() {
     Display Control
 
     BG Mode 0                => 0x0000
-    1D OBJ Character Mapping => 0x0040
+    1D OBJ Character Mapping => 0x0000
     Display OBJ              => 0x1000
   */
-  *DISPCNT = 0x1040;
+  *DISPCNT = 0x1000;
 
   uint16_t* src;
   uint16_t* des;
@@ -34,15 +34,15 @@ int main() {
   oam_init();
 
   // Init palette
-  src = (uint16_t*)quote1dPal;
+  src = (uint16_t*)quote2dPal;
   des = (uint16_t*)&OBJPALMEM[0];
-  count = quote1dPalLen / 2;
+  count = quote2dPalLen / 2;
   memcpy16((uint32_t)src, (uint32_t)des, count);
 
   // Init sprite
-  src = (uint16_t*)quote1dTiles;
+  src = (uint16_t*)quote2dTiles;
   des = (uint16_t*)&CHARBLOCK[4];
-  count = quote1dTilesLen / 2;
+  count = quote2dTilesLen / 2;
   memcpy16((uint32_t)src, (uint32_t)des, count);
 
   // Init oam
